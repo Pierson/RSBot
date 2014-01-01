@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-import java.util.Collections;
+import java.util.Arrays;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -21,6 +21,7 @@ import tasks.banking.OpenBank;
 import tasks.banking.Withdraw;
 import tasks.fletching.*;
 import tasks.interfaces.*;
+import utils.Node;
 import data.Bolt;
 import data.Log;
 import data.Option;
@@ -113,7 +114,8 @@ public class Gui extends MethodProvider {
 	start.addActionListener(new ActionListener() {
 	    public void actionPerformed(ActionEvent ae) {
 		main.dispose();
-		Collections.addAll(fletch.nodes, new BoltTipping(ctx), new Interaction(ctx), new FletchHandler(ctx, fletch), new SelectWhichHandler(ctx), new Deposit(ctx, fletch), new Withdraw(ctx, fletch), new OpenBank(ctx, fletch));
+		fletch.nodes.addAll(Arrays.asList(new BoltTipping(ctx), new Interaction(ctx), new FletchHandler(ctx, fletch), new SelectWhichHandler(ctx), new Deposit(ctx, fletch), new Withdraw(ctx, fletch), new OpenBank(ctx, fletch)));
+		//Collections.addAll(fletch.nodes, new BoltTipping(ctx), new Interaction(ctx), new FletchHandler(ctx, fletch), new SelectWhichHandler(ctx), new Deposit(ctx, fletch), new Withdraw(ctx, fletch), new OpenBank(ctx, fletch));
 	    }
 	});
     

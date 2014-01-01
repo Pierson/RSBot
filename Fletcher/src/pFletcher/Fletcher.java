@@ -13,6 +13,7 @@ import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
+
 import org.powerbot.event.MessageEvent;
 import org.powerbot.event.MessageListener;
 import org.powerbot.event.PaintListener;
@@ -27,7 +28,7 @@ import data.Bolt;
 import data.Log;
 
 @SuppressWarnings("deprecation")
-@Manifest(name = "pFletch AIO", description = "Your AIO Fletching Experience. Supports cutting, stringing, and adding bolt tips!", version = 1.0, topic = 123)
+@Manifest(name = "pFletch AIO", description = "Your AIO Fletching Experience. Supports cutting, stringing, and adding bolt tips!", version = 1.0, topic = 0)
 public class Fletcher extends PollingScript implements PaintListener, MessageListener {
     
     public boolean stringBow;
@@ -47,7 +48,7 @@ public class Fletcher extends PollingScript implements PaintListener, MessageLis
     public String bow = "";
     private String runTime;
     
-    public final ArrayList<Node> nodes = new ArrayList<>();
+    public final ArrayList<Node> nodes = new ArrayList<Node>();
     public static Log log = Log.NONE;
     public static Bolt bolt = Bolt.NONE;
     
